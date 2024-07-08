@@ -1,0 +1,65 @@
+<div class="flex flex-col justify-center items-center font-[sans-serif] fondoimg p-32">
+    <div class="grid md:grid-cols-2 items-center gap-y-8  max-w-7xl w-full shadow-[0_2px_10px_-3px_rgba(0,0,0,1)] rounded-md">
+      <div class="max-md:order-1 flex flex-col justify-center sm:p-6 p-4 bg-transparent w-full h-full space-y-16">
+        <div class="max-w-md space-y-12 mx-auto">
+          <div>
+            <h4 class="text-black text-lg font-semibold">Crea tu cuenta</h4>
+            <p class="text-[13px] text-black mt-2">¡Bienvenido a nuestra página de registro! Comience creando su cuenta.</p>
+          </div>
+          <div>
+            <h4 class="text-black text-lg font-semibold">Registro simple y seguro</h4>
+            <p class="text-[13px] text-black mt-2">Nuestro proceso de registro está diseñado para ser sencillo y seguro. Priorizamos su privacidad y seguridad de sus datos.</p>
+          </div>
+          <div>
+            <h4 class="text-black text-lg font-semibold">Acuerdo de términos y condiciones</h4>
+            <p class="text-[13px] text-black mt-2">Requerir a los usuarios que acepten los términos y condiciones de su servicio durante el registro.</p>
+          </div>
+        </div>
+      </div>
+      <form class="sm:p-6 p-4 w-full" [formGroup]="registerForm" (submit)="onSubmit()">
+        <div class="mb-12">
+          <h3 class="text-orange-400  text-3xl font-extrabold max-md:text-center">Registro</h3>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-y-7 gap-x-7">
+          <div>
+            <label class="text-sm mb-2 block font-semibold">Nombre *</label>
+            <input name="name" type="text" class="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-blue-500" placeholder="Enter name" formControlName="firstName" />
+          </div>
+          <div>
+            <label class="text-sm mb-2 block font-semibold">Apellido *</label>
+            <input name="lname" type="text" class="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-blue-500" placeholder="Enter last name" formControlName="lastName" />
+          </div>
+          <div>
+            <label class="text-sm mb-2 block font-semibold">Correo Electronico *</label>
+            <input name="email" type="text" class="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-blue-500" placeholder="Enter email"  formControlName="email"/>
+          </div>
+          <div>
+            <label class="text-sm mb-2 block font-semibold">Telefono de Contacto (no requerido).</label>
+            <input name="number" type="number" class="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-blue-500" placeholder="Enter mobile number" formControlName="mobile"/>
+          </div>
+          <div>
+            <label class="text-sm mb-2 block font-semibold">Contraseña</label>
+            <input name="password" type="password" class="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-blue-500" placeholder="Enter password" formControlName="password" />
+          </div>
+          <div>
+            <label class="text-sm mb-2 block font-semibold">Confirme Contraseña</label>
+            <input name="cpassword" type="password" class="bg-gray-100 w-full text-sm px-4 py-3 rounded-md outline-blue-500" placeholder="Enter confirm password"  formControlName="confirmPassword"/>
+          </div>
+        </div>
+        <div class="flex items-center mt-8">
+          <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 rounded" />
+          <label for="remember-me" class="ml-3 block text-sm">
+            Acepto los <a href="javascript:void(0);" class="text-blue-500 font-semibold hover:underline ml-1">Terminos y Condiciones</a>
+          </label>
+        </div>
+        <div class="mt-10 flex justify-between">
+          <button [disabled]="registerForm.invalid"  type="submit" class="min-w-[150px] py-3 px-4 text-sm font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-all">
+            Registrarse
+          </button>
+          <button type="button" class="min-w-[150px] py-3 px-4 text-sm font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-all" routerLink="/home">
+            Volver al Inicio
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
